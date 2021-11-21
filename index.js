@@ -15,6 +15,10 @@ app.listen(PORT, () => {
     console.log(`server started on post ${PORT}`)
 });
 
+app.get('/ping', (req, res) => {
+    res.json({ status: 'ok' });
+});
+
 app.use('/api', taskRouter);
 app.use('/api', stepRouter);
 app.use('/api', userRouter)
